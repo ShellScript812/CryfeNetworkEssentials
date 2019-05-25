@@ -44,8 +44,17 @@ public class Main extends JavaPlugin {
         dataAPI.setPrefix("§e•§6● §lC§eryfeAPI §8▎ §7");
     }
 
+    private void loadConfig() {
+        getConfig().options().copyDefaults(true);
+        getConfig().addDefault("MySQL.User", "USER");
+        getConfig().addDefault("MySQL.Pass", "PASS");
+        getConfig().addDefault("MySQL.Host", "HOST");
+        getConfig().addDefault("MySQL.Database", "DB");
+        saveConfig();
+    }
+
     private void loadMySQLManager() {
-        mySQLManager = new MySQLManager("localhost", "admin", "Z0HvcaOSVQDWHeTC", "APIManager");
+        mySQLManager = new MySQLManager(getConfig().getString("MySQL.Host"), getConfig().getString("MySQL.User"), getConfig().getString("MySQL.Pass"), getConfig().getString("MySQL.Database"));
         mySQLManager.connect();
         mySQLManager.createTable("Users", "UUID VARCHAR(100), NAME VARCHAR(16), IPADRESS VARCHAR(40), JOINS INTEGER, FIRSTJOIN TEXT, LASTJOIN TEXT");
         mySQLManager.createTable("Coins", "UUID VARCHAR(100), COINS INTEGER");
