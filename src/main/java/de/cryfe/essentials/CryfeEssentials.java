@@ -2,9 +2,9 @@ package de.cryfe.essentials;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin {
+public class CryfeEssentials extends JavaPlugin {
 
-    private static Main instance;
+    private static CryfeEssentials instance;
 
     @Override
     public void onEnable() {
@@ -16,7 +16,7 @@ public class Main extends JavaPlugin {
 
     }
 
-    public static Main getInstance() {
+    public static CryfeEssentials getInstance() {
         return instance;
     }
 }
