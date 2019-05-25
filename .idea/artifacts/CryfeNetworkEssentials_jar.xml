@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CryfeNetworkEssentials:jar">
+    <output-path>$USER_HOME$/Desktop/</output-path>
+    <root id="archive" name="CryfeNetworkEssentials.jar">
+      <element id="module-output" name="CryfeNetworkEssentials" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/java/plugin.yml" />
+    </root>
+  </artifact>
+</component>

@@ -5,6 +5,7 @@ import de.cryfe.api.commands.CMD_Coins;
 import de.cryfe.api.commands.CMD_Info;
 import de.cryfe.api.listener.LIS_JoinQuit;
 import de.cryfe.api.manager.MySQLManager;
+import de.cryfe.api.utilities.ConsoleMessagePrinter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,12 +17,18 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         instance = this;
-        loadStrings();
-        loadListener();
-        loadCommands();
-        loadMySQLManager();
-        Bukkit.getConsoleSender().sendMessage(" > API wurde geladen");
+
+        this.loadConfig();
+        this.loadStrings();
+        this.loadListener();
+        this.loadCommands();
+        this.loadMySQLManager();
+
+        ConsoleMessagePrinter.printMessage(
+                ConsoleMessagePrinter.INFORMATION, "Application enabled with success! Loading from: " + Main.class.getName());
+
     }
 
     @Override

@@ -5,14 +5,15 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@SuppressWarnings("WeakerAccess")
 public class MySQLManager {
 
     public static Connection con;
 
-    String host;
-    String name;
-    String password;
-    String database;
+    private String host;
+    private String name;
+    private String password;
+    private String database;
 
     public MySQLManager(String host, String user, String pw, String db) {
         this.host = host;
